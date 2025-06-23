@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emmanuel Olakunle Portfolio</title>
 
+ 
   <!--
     - favicon
   -->
@@ -1208,20 +1209,22 @@
           <h3 class="h3 form-title">Contact Form</h3>
 
           <form action="https://formsubmit.io/send/e.kunlezy@gmail.com" method="POST">
+            <!-- Hidden input for spam protection -->
+            <input name="_formsubmit_id" type="text" style="display:none">
 
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+              <div class="input-wrapper">
+                <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
+                
+                <!-- <input type="email" name="email" class="form-input" placeholder="Email address" required> -->
+                <input type="email" name="email" class="form-input" placeholder="Email address" required>
+              </div>
 
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
+            <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
+             <button class="form-btn" type="submit">
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+              </button>
+            
           </form>
 
         </section>
@@ -1247,6 +1250,30 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+   <!--
+    - sweetalert cdn
+  -->
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- SweetAlert Script -->
+  <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      Swal.fire({
+            title: "✅ Message Sent!",
+            text: "Thanks for reaching out. I’ll get back to you shortly.",
+            icon: "success",
+            confirmButtonText: "OK",
+            confirmButtonColor: "#3085d6"
+          }).then(() => {
+      form.submit();
+      });
+    });
+  </script>
+
 
 </body>
 
