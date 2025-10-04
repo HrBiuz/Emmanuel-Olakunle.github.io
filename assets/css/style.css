@@ -1058,6 +1058,11 @@ main {
   line-height: 1.6;
   color: var(--light-gray-70);
   margin: 0;
+  max-height: 4.8em; /* Shows ~3 lines */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limits to 3 lines */
+  -webkit-box-orient: vertical;
 }
 
 /* Project Tags */
@@ -2001,6 +2006,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
 
 
 
