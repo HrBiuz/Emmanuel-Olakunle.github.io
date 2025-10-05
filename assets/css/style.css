@@ -1032,7 +1032,7 @@ main {
   padding: 20px 10px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
 }
 
 .project-title {
@@ -1053,16 +1053,68 @@ main {
   letter-spacing: 0.5px;
 }
 
+/* Project Description with structured format */
 .project-description {
-  font-size: var(--fs-6);
+  font-size: var(--fs-7);
   line-height: 1.6;
   color: var(--light-gray-70);
-  margin: 0;
-  max-height: 4.8em; /* Shows ~3 lines */
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limits to 3 lines */
-  -webkit-box-orient: vertical;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.project-description::-webkit-scrollbar {
+  width: 4px;
+}
+
+.project-description::-webkit-scrollbar-track {
+  background: var(--jet);
+  border-radius: 4px;
+}
+
+.project-description::-webkit-scrollbar-thumb {
+  background: var(--orange-yellow-crayola);
+  border-radius: 4px;
+}
+
+.project-description p {
+  margin: 0 0 12px 0;
+}
+
+.project-description strong {
+  color: var(--white-2);
+  font-weight: var(--fw-500);
+}
+
+.project-description .challenge {
+  border-left: 3px solid #ff6b6b;
+  padding-left: 10px;
+}
+
+.project-description .solution {
+  border-left: 3px solid #4ecdc4;
+  padding-left: 10px;
+}
+
+.project-description .impact {
+  border-left: 3px solid var(--orange-yellow-crayola);
+  padding-left: 10px;
+}
+
+.project-description .technical {
+  border-left: 3px solid #95e1d3;
+  padding-left: 10px;
+}
+
+.project-description ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.project-description li {
+  margin-bottom: 6px;
+  color: var(--light-gray-70);
 }
 
 /* Project Tags */
@@ -1145,6 +1197,10 @@ main {
   .project-content {
     padding: 25px 15px;
   }
+  
+  .project-description {
+    max-height: 220px;
+  }
 }
 
 /* Responsive - Large Desktop */
@@ -1153,7 +1209,6 @@ main {
     height: 280px;
   }
 }
-
 
 
 /*-----------------------------------*\
@@ -2006,6 +2061,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
 
 
 
