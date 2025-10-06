@@ -564,6 +564,16 @@ main {
 
 .testimonials-title { margin-bottom: 20px; }
 
+@keyframes autoScroll {
+  0% {
+    scroll-behavior: smooth;
+    scroll-snap-align: start;
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .testimonials-list {
   display: flex;
   justify-content: flex-start;
@@ -576,6 +586,18 @@ main {
   scroll-behavior: smooth;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
+	/* Add animation */
+  animation: scrollTestimonials 20s linear infinite;
+}
+
+/* Define the scrolling keyframes */
+@keyframes scrollTestimonials {
+  0% {
+    scroll-left: 0;
+  }
+  100% {
+    scroll-left: 100%;
+  }
 }
 
 .testimonials-item {
@@ -2073,6 +2095,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
 
 
 
