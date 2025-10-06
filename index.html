@@ -1200,39 +1200,11 @@
           });
         });
       });
-  
-    
-  const testimonialsList = document.querySelector('.testimonials-list');
-
-  if (testimonialsList) {
-    let scrollSpeed = 1; // Adjust: higher = faster scroll
-    let direction = 1;   // 1 = right, -1 = left
-
-    function autoScroll() {
-      testimonialsList.scrollLeft += scrollSpeed * direction;
-
-      // Reverse direction at the edges
-      if (
-        testimonialsList.scrollLeft + testimonialsList.clientWidth >= testimonialsList.scrollWidth ||
-        testimonialsList.scrollLeft <= 0
-      ) {
-        direction *= -1;
-      }
-    }
-
-    // Run the scroll every 30ms (smooth)
-    let scrollInterval = setInterval(autoScroll, 30);
-
-    // Optional: Pause on hover so users can read
-    testimonialsList.addEventListener('mouseenter', () => clearInterval(scrollInterval));
-    testimonialsList.addEventListener('mouseleave', () => {
-      scrollInterval = setInterval(autoScroll, 30);
-    });
-  }
 </script>
 </body>
 
 </html>
+
 
 
 
