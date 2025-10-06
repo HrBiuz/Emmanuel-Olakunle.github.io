@@ -602,8 +602,8 @@ main {
   line-height: 1.6;
   display: -webkit-box;
   line-clamp: 4;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
   overflow: visible;
   height: auto;
 }
@@ -2073,6 +2073,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
 
 
 
