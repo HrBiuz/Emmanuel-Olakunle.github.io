@@ -5,8 +5,35 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emmanuel Olakunle Portfolio</title>
 
+  <title>Emmanuel Olakunle - Data Analyst | Power BI Specialist | Business Operations & Sales Analytics</title>
+  <meta name="title" content="Emmanuel Olakunle - Data Analyst | Power BI Specialist | Business Operations & Sales Analytics">
+  <meta name="description" content="Data Analyst with 4+ years building Power BI dashboards for business operations, sales analytics, and transportation logistics. Reduce reporting time by 40%. Book a discovery call.">
+  <meta name="keywords" content="Power BI consultant, business analytics, sales dashboard, operations analytics, CRM analytics, transportation logistics, data analyst, Power BI specialist">
+  <meta name="author" content="Emmanuel Olakunle">
+
+  <!-- Primary Meta Tags -->
+  <title>Emmanuel Olakunle - Power BI Specialist | Business Operations & Sales Analytics</title>
+  <meta name="title" content="Emmanuel Olakunle - Power BI Specialist | Business Operations & Sales Analytics">
+  <meta name="description" content="Data Analyst with 4+ years building Power BI dashboards for business operations, sales analytics, and transportation logistics. Reduce reporting time by 40%. Book a discovery call.">
+  <meta name="keywords" content="Power BI consultant, business analytics, sales dashboard, operations analytics, CRM analytics, transportation logistics, data analyst Nigeria, Power BI specialist">
+  <meta name="author" content="Emmanuel Olakunle">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emmanuel-olakunle-portfolio.vercel.app/">
+  <meta property="og:title" content="Emmanuel Olakunle - Power BI Specialist | Business Operations & Sales Analytics">
+  <meta property="og:description" content="Data Analyst with 4+ years building Power BI dashboards for business operations, sales analytics, and transportation logistics. Reduce reporting time by 40%.">
+  <meta property="og:image" content="https://emmanuel-olakunle-portfolio.vercel.app/assets/images/portfolio-preview.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://emmanuel-olakunle-portfolio.vercel.app/">
+  <meta property="twitter:title" content="Emmanuel Olakunle - Power BI Specialist | Business Operations & Sales Analytics">
+  <meta property="twitter:description" content="Data Analyst with 4+ years building Power BI dashboards for business operations, sales analytics, and transportation logistics.">
+  <meta property="twitter:image" content="https://emmanuel-olakunle-portfolio.vercel.app/assets/images/portfolio-preview.png">
+
+  
  
   <!--
     - favicon
@@ -42,13 +69,13 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Emmanuel Olakunle" width="80">
+          <img src="./assets/images/my-avatar.png" alt="Emmanuel Olakunle - Data Analyst and Power BI Specialist" width="80">
         </figure>
 
         <div class="info-content">
           <h1 class="name" title="Emmanuel Olakunle">Emmanuel Olakunle</h1>
 
-          <p class="title"> Data Analyst | Technical Writer </p>
+          <p class="title"> Data Analyst | BI & Visualition Expert </p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -479,31 +506,31 @@
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/comet-logo.png" alt="client logo">
+                <img src="./assets/images/comet-logo.png" alt="Comet company logo - client">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/GIIT logo.png" alt="client logo">
+                <img src="./assets/images/GIIT logo.png" alt="GIIT company logo - client">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/Netisens.png" alt="client logo">
+                <img src="./assets/images/Netisens.png" alt="Netisens ICT company logo - client">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/heartbeat.png" alt="client logo">
+                <img src="./assets/images/heartbeat.png" alt="Comet company logo - client">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/inventors_community_logo.png" alt="client logo">
+                <img src="./assets/images/inventors_community_logo.png" alt="inventors community logo - client"">
               </a>
             </li>
 
@@ -825,7 +852,7 @@
               <div class="project-item-icon-box">
                 <ion-icon name="eye-outline"></ion-icon>
               </div>
-              <img src="./assets/images/Railway Overview.png" alt="Railway Analysis Dashboard" loading="lazy">
+              <img src="./assets/images/Railway Overview.png" alt="UK Railway Operations Dashboard - Power BI analytics tracking 31,000+ trips" loading="lazy">
             </figure>
           </a>
 
@@ -1174,10 +1201,40 @@
         });
       });
     </script>
+  
+    <script>
+  const testimonialsList = document.querySelector('.testimonials-list');
 
+  if (testimonialsList) {
+    let scrollSpeed = 1; // Adjust: higher = faster scroll
+    let direction = 1;   // 1 = right, -1 = left
+
+    function autoScroll() {
+      testimonialsList.scrollLeft += scrollSpeed * direction;
+
+      // Reverse direction at the edges
+      if (
+        testimonialsList.scrollLeft + testimonialsList.clientWidth >= testimonialsList.scrollWidth ||
+        testimonialsList.scrollLeft <= 0
+      ) {
+        direction *= -1;
+      }
+    }
+
+    // Run the scroll every 30ms (smooth)
+    let scrollInterval = setInterval(autoScroll, 30);
+
+    // Optional: Pause on hover so users can read
+    testimonialsList.addEventListener('mouseenter', () => clearInterval(scrollInterval));
+    testimonialsList.addEventListener('mouseleave', () => {
+      scrollInterval = setInterval(autoScroll, 30);
+    });
+  }
+</script>
 </body>
 
 </html>
+
 
 
 
