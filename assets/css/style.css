@@ -605,6 +605,7 @@ main {
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: visible;
+  height: auto;
 }
 /**.testimonials-text {
   color: #e0e0e0; /** var(--light-gray) 
@@ -2072,6 +2073,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
 
 
 
