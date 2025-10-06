@@ -572,7 +572,7 @@ main {
   margin: 0 -15px;
   padding: 25px 15px;
   padding-bottom: 35px;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
@@ -591,12 +591,13 @@ main {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
 .testimonials-item {
-  min-width: 50%;
+  flex: 0 0 300px; /* Fixed width for each item, adjust as needed */
+  scroll-snap-align: center;
   scroll-snap-align: center;
 }
 
@@ -2080,6 +2081,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
 
 
 
