@@ -578,6 +578,7 @@ main {
   scroll-snap-type: inline mandatory;
 	/* Add animation */
   animation: scrollTestimonials 7s linear infinite;
+   width: 100%;
 }
 
 /* Pause animation when user hovers */
@@ -591,14 +592,14 @@ main {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% + 300px))
   }
 }
 
 .testimonials-item {
   flex: 0 0 300px; /* Fixed width for each item, adjust as needed */
   scroll-snap-align: center;
-  scroll-snap-align: center;
+ 
 }
 
 .testimonials-avatar-box {
@@ -2081,6 +2082,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
 
 
 
