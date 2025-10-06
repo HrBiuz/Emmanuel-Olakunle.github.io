@@ -607,7 +607,7 @@ main {
   /**overflow: hidden;*/
 }
 .testimonials-text {
-  color: var(--light-gray);
+  color: #e0e0e0; /** var(--light-gray) */
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
@@ -2072,6 +2072,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
 
 
 
