@@ -868,6 +868,25 @@ main {
   gap: 5px;
   margin-bottom: 8px;
 }
+.title-wrapper i {
+  font-size: 24px; /* Adjust the size as needed */
+  margin-right: 10px; /* Add some space between the icon and the text */
+}
+
+/* Specific color for SQL icon */
+.title-wrapper i.fas.fa-database {
+  color: #ff9900; /* Example color for SQL, adjust as needed */
+}
+
+/* Specific color for Excel icon */
+.title-wrapper i.fas.fa-file-excel {
+  color: #217346; /* Example color for Excel, adjust as needed */
+}
+
+/* Specific color for Power BI icon */
+.title-wrapper i.fas.fa-chart-bar {
+  color: #F2C811; /* Example color for Power BI, adjust as needed */
+}
 
 .skill .title-wrapper data {
   color: var(--light-gray);
@@ -2082,6 +2101,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
 
 
 
