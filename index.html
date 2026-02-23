@@ -842,7 +842,58 @@
 
     <ul class="project-list">
 
-      <!-- WooCommerce Commercial Analysis Project -->
+    <!-- SQL Data Warehouse ETL Project -->
+<li class="project-item active" data-filter-item data-category="sql">
+  <div class="project-card">
+    <a href="GITHUB_LINK" target="_blank" class="project-img-link">
+      <figure class="project-img">
+        <div class="project-item-icon-box">
+          <ion-icon name="eye-outline"></ion-icon>
+        </div>
+        <img src="./assets/images/data_warehouse_overview.png" alt="SQL Data Warehouse ETL Project" loading="lazy">
+      </figure>
+    </a>
+
+    <div class="project-content">
+      <h3 class="project-title">CRM & ERP Data Warehouse (ETL Pipeline)</h3>
+      <p class="project-category">Data Engineering • SQL Server</p>
+
+      <div class="project-description">
+        <p class="challenge"><strong>Challenge:</strong> CRM and ERP data lived in separate systems with inconsistent formats, making it impossible for analysts and business users to query a single, reliable source of truth for reporting</p>
+
+        <p class="solution"><strong>Solution:</strong> Designed and built a full ETL pipeline on SQL Server using Medallion Architecture — ingesting raw CRM and ERP CSV files through Landing, Staging, and Production layers into a Star Schema ready for BI consumption</p>
+
+        <div class="impact">
+          <strong>What Was Built:</strong>
+          <ul>
+            <li><strong>Bronze Layer:</strong> Raw data ingested as is from CRM (sales, customers, products) and ERP sources via stored procedures with full truncate & insert loads</li>
+            <li><strong>Silver Layer:</strong> Data cleansed, standardized, normalized, and enriched, removing duplicates, fixing nulls, and deriving calculated columns</li>
+            <li><strong>Gold Layer:</strong> Business-ready views modeled into a Star Schema : <code>fact_sales</code>, <code>dim_customers</code>, <code>dim_products</code> — optimized for analytics and reporting</li>
+            <li>Data correctness and integration checks validated at each layer before promotion</li>
+          </ul>
+        </div>
+
+        <p class="technical"><strong>Technical:</strong> SQL Server, Stored Procedures, ETL pipeline design, Medallion Architecture, Star Schema, data cleansing, data normalization, data integration, Git versioning</p>
+      </div>
+
+      <div class="project-btn-group">
+        <a href="GITHUB_LINK" target="_blank" class="view-dashboard-btn">
+          <ion-icon name="logo-github"></ion-icon>
+          <span>View on GitHub</span>
+        </a>
+
+        <a href="YOUR_ARCHITECTURE_DIAGRAM_LINK" target="_blank" class="view-dashboard-btn">
+          <ion-icon name="git-network-outline"></ion-icon>
+          <span>View Architecture</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</li>
+
+       <!-- WooCommerce Commercial Analysis Project -->
+
 <li class="project-item active" data-filter-item data-category="dashboard">
   <div class="project-card">
     <a href="https://app.powerbi.com/view?r=eyJrIjoiNzUyMTc4ZjItZTMwYS00OTgxLWIyYWEtYWZmYTM3OGY3YjE2IiwidCI6IjA5NWRlYzU0LThiMmEtNDA2Ny1iY2JkLWNkNjEzYjAzODA1OCJ9&embedImagePlaceholder=true" target="_blank" class="project-img-link">
@@ -899,6 +950,13 @@
   </div>
 </li>
 
+
+
+
+
+
+
+      
       <!-- CRM Analysis Project -->
       <li class="project-item active" data-filter-item data-category="dashboard">
         <div class="project-card">
@@ -1319,6 +1377,7 @@
 </body>
 
 </html>
+
 
 
 
