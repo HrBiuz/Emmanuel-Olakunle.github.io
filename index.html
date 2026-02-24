@@ -861,14 +861,14 @@
       <div class="project-description">
         <p class="challenge"><strong>Challenge:</strong> CRM and ERP data lived in separate systems with inconsistent formats, making it impossible for analysts and business users to query a single, reliable source of truth for reporting</p>
 
-        <p class="solution"><strong>Solution:</strong> Designed and built a full ETL pipeline on SQL Server using Medallion Architecture — ingesting raw CRM and ERP CSV files through Landing, Staging, and Production layers into a Star Schema ready for BI consumption</p>
+        <p class="solution"><strong>Solution:</strong> Designed and built a full ETL pipeline on SQL Server using Medallion Architecture ingesting raw CRM and ERP CSV files through Landing, Staging, and Production layers into a Star Schema ready for BI consumption</p>
 
         <div class="impact">
           <strong>What Was Built:</strong>
           <ul>
-            <li><strong>Bronze Layer:</strong> Raw data ingested as is from CRM (sales, customers, products) and ERP sources via stored procedures with full truncate & insert loads</li>
-            <li><strong>Silver Layer:</strong> Data cleansed, standardized, normalized, and enriched, removing duplicates, fixing nulls, and deriving calculated columns</li>
-            <li><strong>Gold Layer:</strong> Business-ready views modeled into a Star Schema : <code>fact_sales</code>, <code>dim_customers</code>, <code>dim_products</code> — optimized for analytics and reporting</li>
+            <li><strong>Landing Layer:</strong> Raw data ingested as is from CRM (sales, customers, products) and ERP sources via stored procedures with full truncate & insert loads</li>
+            <li><strong>Staging Layer:</strong> Data cleansed, standardized, normalized, and enriched, removing duplicates, fixing nulls, and deriving calculated columns</li>
+            <li><strong>Production Layer:</strong> Business-ready views modeled into a Star Schema : <code>fact_sales</code>, <code>dim_customers</code>, <code>dim_products</code> optimized for analytics and reporting</li>
             <li>Data correctness and integration checks validated at each layer before promotion</li>
           </ul>
         </div>
@@ -1377,6 +1377,7 @@
 </body>
 
 </html>
+
 
 
 
