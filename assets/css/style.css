@@ -651,7 +651,7 @@ main {
 
 .testimonials { 
   margin-bottom: 30px;
-  overflow: hidden; /* NEW - Contain everything inside */
+  overflow: hidden;
 }
 
 .testimonials-title { margin-bottom: 20px; }
@@ -661,35 +661,35 @@ main {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 15px;
-  margin: 0; /* FIXED - was 0 -15px */
-  padding: 25px 0; /* FIXED - was 25px 15px */
+  margin: 0;
+  padding: 25px 0;
   padding-bottom: 35px;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  animation: scrollTestimonials 7s linear infinite;
-  width: 100%;
+  animation: scrollTestimonials 30s linear infinite;
+  width: max-content;
 }
 
-/* Pause animation when user hovers */
-.testimonials-list:hover {
+/* Pause animation when hovering over list or any item */
+.testimonials-list:hover,
+.testimonials-item:hover {
   animation-play-state: paused;
 }
 
-/* Define smooth scrolling motion */
+/* Smooth infinite scroll animation */
 @keyframes scrollTestimonials {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-50%)); /* SIMPLIFIED */
+    transform: translateX(-33.333%);
   }
 }
 
 .testimonials-item {
   flex: 0 0 300px;
   scroll-snap-align: center;
+  cursor: pointer; /* Show it's interactive */
 }
 
 .testimonials-avatar-box {
@@ -716,7 +716,6 @@ main {
   overflow: visible;
   height: auto;
 }
-
 
 /**
  * #testimonials-modal
