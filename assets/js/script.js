@@ -165,12 +165,18 @@ if (contactBtn) {
   contactBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
-    // Find the contact navigation link
-    for (let i = 0; i < navigationLinks.length; i++) {
-      if (navigationLinks[i].innerHTML.toLowerCase() === 'contact') {
-        // Trigger click on the actual contact nav link
-        navigationLinks[i].click();
-        break;
+    // Manually trigger the same logic as nav buttons
+    const pages = document.querySelectorAll("[data-page]");
+    const navLinks = document.querySelectorAll("[data-nav-link]");
+
+    for (let i = 0; i < pages.length; i++) {
+      if ('contact' === pages[i].dataset.page) {
+        pages[i].classList.add("active");
+        navLinks[i].classList.add("active");
+        window.scrollTo(0, 0);
+      } else {
+        pages[i].classList.remove("active");
+        navLinks[i].classList.remove("active");
       }
     }
   });
