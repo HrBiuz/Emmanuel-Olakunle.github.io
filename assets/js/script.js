@@ -195,3 +195,21 @@ if (portfolioBtn) {
     }
   });
 }
+
+// Duplicate testimonials for infinite auto-scroll
+const testimonialsList = document.querySelector('.testimonials-list');
+
+if (testimonialsList) {
+  const items = Array.from(testimonialsList.children);
+  
+  // Clone all testimonials twice for seamless infinite loop
+  items.forEach(item => {
+    const clone = item.cloneNode(true);
+    testimonialsList.appendChild(clone);
+  });
+  
+  items.forEach(item => {
+    const clone = item.cloneNode(true);
+    testimonialsList.appendChild(clone);
+  });
+}
