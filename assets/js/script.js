@@ -176,3 +176,22 @@ if (contactBtn) {
     }
   });
 }
+
+// portfolio button functionality (integrates with existing navigation)
+const portfolioBtn = document.getElementById('portfolio-btn');
+
+if (portfolioBtn) {
+  portfolioBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    // Find and click the Portfolio button in navbar
+    const navButtons = document.querySelectorAll("[data-nav-link]");
+    
+    for (let i = 0; i < navButtons.length; i++) {
+      if (navButtons[i].innerHTML.toLowerCase().trim() === 'portfolio') {
+        navButtons[i].click();
+        break;
+      }
+    }
+  });
+}
