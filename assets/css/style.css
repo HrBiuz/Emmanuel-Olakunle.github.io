@@ -312,6 +312,19 @@ main {
 
 \*--------------------------------*/
 
+.cta-section {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.cta-section p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
 /* CTA Buttons Container */
 .cta-buttons {
   display: flex;
