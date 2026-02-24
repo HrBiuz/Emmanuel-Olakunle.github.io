@@ -165,18 +165,13 @@ if (contactBtn) {
   contactBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
-    // Manually trigger the same logic as nav buttons
-    const pages = document.querySelectorAll("[data-page]");
-    const navLinks = document.querySelectorAll("[data-nav-link]");
-
-    for (let i = 0; i < pages.length; i++) {
-      if ('contact' === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navLinks[i].classList.remove("active");
+    // Find and click the Contact button in navbar
+    const navButtons = document.querySelectorAll("[data-nav-link]");
+    
+    for (let i = 0; i < navButtons.length; i++) {
+      if (navButtons[i].innerHTML.toLowerCase().trim() === 'contact') {
+        navButtons[i].click();
+        break;
       }
     }
   });
