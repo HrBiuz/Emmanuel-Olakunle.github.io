@@ -157,3 +157,33 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+// Contact link navigation
+document.querySelector('.contact-link').addEventListener('click', function(e) {
+  e.preventDefault();
+  
+  // Remove active class from all pages
+  document.querySelectorAll('[data-page]').forEach(page => {
+    page.classList.remove('active');
+  });
+  
+  // Add active class to contact page
+  document.querySelector('[data-page="contact"]').classList.add('active');
+  
+  // Update navigation active state (if you have nav links)
+  document.querySelectorAll('[data-nav-link]').forEach(link => {
+    link.classList.remove('active');
+  });
+  
+  // Find and activate the contact nav link
+  const contactNavLink = Array.from(document.querySelectorAll('[data-nav-link]'))
+    .find(link => link.textContent.toLowerCase().includes('contact'));
+  
+  if (contactNavLink) {
+    contactNavLink.classList.add('active');
+  }
+  
+  // Smooth scroll to top of page
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
