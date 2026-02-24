@@ -158,40 +158,20 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
+// contact button functionality (integrates with existing navigation)
+const contactBtn = document.getElementById('contact-btn');
 
-// Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-  
-  const contactBtn = document.getElementById('contact-btn');
-  
-  if (contactBtn) {
-    contactBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      // Remove active class from all articles/pages
-      const allPages = document.querySelectorAll('article[data-page]');
-      allPages.forEach(page => page.classList.remove('active'));
-      
-      // Add active class to contact page
-      const contactPage = document.querySelector('article[data-page="contact"]');
-      if (contactPage) {
-        contactPage.classList.add('active');
+if (contactBtn) {
+  contactBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    // Find the contact navigation link
+    for (let i = 0; i < navigationLinks.length; i++) {
+      if (navigationLinks[i].innerHTML.toLowerCase() === 'contact') {
+        // Trigger click on the actual contact nav link
+        navigationLinks[i].click();
+        break;
       }
-      
-      // Update navigation if you have nav links
-      const allNavLinks = document.querySelectorAll('[data-nav-link]');
-      allNavLinks.forEach(link => link.classList.remove('active'));
-      
-      // Find contact nav link and activate it
-      const navLinks = document.querySelectorAll('[data-nav-link]');
-      navLinks.forEach(link => {
-        if (link.textContent.toLowerCase().trim() === 'contact') {
-          link.classList.add('active');
-        }
-      });
-      
-      // Scroll to top smoothly
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-});
+    }
+  });
+}
