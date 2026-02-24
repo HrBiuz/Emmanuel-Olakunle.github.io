@@ -159,31 +159,39 @@ for (let i = 0; i < navigationLinks.length; i++) {
 }
 
 
-// Contact link navigation
-document.querySelector('.contact-link').addEventListener('click', function(e) {
-  e.preventDefault();
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
   
-  // Remove active class from all pages
-  document.querySelectorAll('[data-page]').forEach(page => {
-    page.classList.remove('active');
-  });
+  const contactBtn = document.getElementById('contact-btn');
   
-  // Add active class to contact page
-  document.querySelector('[data-page="contact"]').classList.add('active');
-  
-  // Update navigation active state (if you have nav links)
-  document.querySelectorAll('[data-nav-link]').forEach(link => {
-    link.classList.remove('active');
-  });
-  
-  // Find and activate the contact nav link
-  const contactNavLink = Array.from(document.querySelectorAll('[data-nav-link]'))
-    .find(link => link.textContent.toLowerCase().includes('contact'));
-  
-  if (contactNavLink) {
-    contactNavLink.classList.add('active');
+  if (contactBtn) {
+    contactBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Remove active class from all articles/pages
+      const allPages = document.querySelectorAll('article[data-page]');
+      allPages.forEach(page => page.classList.remove('active'));
+      
+      // Add active class to contact page
+      const contactPage = document.querySelector('article[data-page="contact"]');
+      if (contactPage) {
+        contactPage.classList.add('active');
+      }
+      
+      // Update navigation if you have nav links
+      const allNavLinks = document.querySelectorAll('[data-nav-link]');
+      allNavLinks.forEach(link => link.classList.remove('active'));
+      
+      // Find contact nav link and activate it
+      const navLinks = document.querySelectorAll('[data-nav-link]');
+      navLinks.forEach(link => {
+        if (link.textContent.toLowerCase().trim() === 'contact') {
+          link.classList.add('active');
+        }
+      });
+      
+      // Scroll to top smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
-  
-  // Smooth scroll to top of page
-  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
